@@ -48,3 +48,18 @@ void Solver::solve_sudoku()
 {
   
 }
+
+bool Solver::checkRow(int value, int rowNum)
+{
+  
+}
+
+bool Solver::checkCol(int value, int colNum)
+{
+  
+}
+
+bool Solver::checkBlock(int value, int rowNum, int colNum)
+{
+  
+}
