@@ -49,17 +49,17 @@ void Solver::solve_sudoku()
   
 }
 
-bool Solver::checkRow(int value, int rowNum)
+bool Solver::checkRow(char value, int rowNum)
 {
   
 }
 
-bool Solver::checkCol(int value, int colNum)
+bool Solver::checkCol(char value, int colNum)
 {
   
 }
 
-bool Solver::checkBlock(int value, int rowNum, int colNum)
+bool Solver::checkBlock(char value, int rowNum, int colNum)
 {
   
 }
