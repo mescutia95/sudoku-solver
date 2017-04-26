@@ -79,5 +79,13 @@ bool Solver::checkCol(char value, int colNum)
 
 bool Solver::checkBlock(char value, int rowNum, int colNum)
 {
-  
+  for(int y = 0; y < n; ++y)
+	{
+		for(int x = 0; x < n; ++x)
+		{
+			if(m_grid[x+rowNum][y+colNum] == value)
+				return false;
+		}
+	}
+	return true;
 }
