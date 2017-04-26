@@ -1,5 +1,23 @@
 #include "solver.h"
 
+// initializes the char reference array (m_ref)
+Solver::Solver()
+{
+  int i = 0;
+  // add char values 0 to 9
+  for(int c = 48; c <= 57; ++c)
+  {
+    m_ref[i] = c;
+    ++i;
+  }
+  // add char values A to F
+  for(int c = 65; c <= 70; ++c)
+  {
+    m_ref[i] = c;
+    ++i;
+  }
+}
+
 // function parses input file and inserts values into the grid
 void Solver::parse_input(string filename)
 {

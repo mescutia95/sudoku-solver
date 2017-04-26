@@ -9,7 +9,7 @@ using namespace std;
 class Solver
 {
   public:
-    Solver() {};
+    Solver();
     void parse_input(string filename);
     void print_grid();
     void solve_sudoku();
@@ -27,5 +27,6 @@ class Solver
     
     static const int n = 16;
     Cell m_grid[n][n]; // grid of cell objects
+    char m_ref[n];
 };
 #endif
