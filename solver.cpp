@@ -7,7 +7,7 @@ void Solver::parse_input(string filename)
   int y = 0; // row position
   string line;
   char c;
-  
+
   ifstream infile(filename);
   if(infile.is_open())
   {
@@ -46,20 +46,27 @@ void Solver::print_grid()
 // function where backtracking algorithm will be implemented
 void Solver::solve_sudoku()
 {
-  
+
 }
 
 bool Solver::checkRow(char value, int rowNum)
 {
-  
+  for(int i = 0; i < 16; i++)
+  {
+    if(m_grid[rowNum][i].m_value == value)
+    {
+      return false;
+    }
+  }
+  return true;
 }
 
 bool Solver::checkCol(char value, int colNum)
 {
-  
+
 }
 
 bool Solver::checkBlock(char value, int rowNum, int colNum)
 {
-  
+
 }
