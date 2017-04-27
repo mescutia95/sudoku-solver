@@ -16,6 +16,7 @@ class Solver
     bool checkRow(char value, int rowNum);
     bool checkCol(char value, int colNum);
     bool checkBlock(char value, int rowNum, int colNum);
+    bool hasViolations();
     
   private:
     class Cell

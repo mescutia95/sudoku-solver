@@ -25,7 +25,7 @@ void Solver::parse_input(string filename)
   int y = 0; // row position
   string line;
   char c;
-  
+
   ifstream infile(filename);
   if(infile.is_open())
   {
@@ -64,19 +64,29 @@ void Solver::print_grid()
 // function where backtracking algorithm will be implemented
 void Solver::solve_sudoku()
 {
-  
+
 }
 
+// check if row has no violations
 bool Solver::checkRow(char value, int rowNum)
 {
-  
+  for(int i = 0; i < 16; i++)
+  {
+    if(m_grid[rowNum][i].m_value == value)
+    {
+      return false;
+    }
+  }
+  return true;
 }
 
-bool Solver::checkCol(char value, int colNum)
+// check if column has no violations
+bool checkCol(char value, int colNum)
 {
   
 }
 
+// check if block has no violations
 bool Solver::checkBlock(char value, int rowNum, int colNum)
 {
 	int startRow = rowNum - rowNum%4;
@@ -91,4 +101,10 @@ bool Solver::checkBlock(char value, int rowNum, int colNum)
 		}
 	}
 	return true;
+}
+
+// returns true if there are no violations for row, column, and, block
+bool Solver::noViolations(char val, int rowNum, int colNum)
+{
+  return checkRow(val, rowNum) && checkCol(val, colNum) && checkBlock(val, rowNum, colNum);
 }
