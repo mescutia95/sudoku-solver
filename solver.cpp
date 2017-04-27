@@ -79,11 +79,14 @@ bool Solver::checkCol(char value, int colNum)
 
 bool Solver::checkBlock(char value, int rowNum, int colNum)
 {
-  for(int y = 0; y < n; ++y)
+	int startRow = rowNum - rowNum%4;
+	int startCol = colNum - colNum%4;
+	
+  for(int y = 0; y < 4; ++y)
 	{
-		for(int x = 0; x < n; ++x)
+		for(int x = 0; x < 4; ++x)
 		{
-			if(m_grid[x+rowNum][y+colNum] == value)
+			if(m_grid[x+startRow][y+startCol] == value)
 				return false;
 		}
 	}
